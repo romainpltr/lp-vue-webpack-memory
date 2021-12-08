@@ -1,6 +1,6 @@
 <template>
   <div class="board">
-      <Card v-for="card in board" v-model="nCard" :key="card" v-on:selectedCard="selectedCard(isFlipped)" :class="{ 'flipped': card.isFlipped, 'matched' : card.isMatched }" @click="flipCard(card)" :value="card.value" :img="card.img"></Card>
+      <Card v-for="card in board" v-model="nCard" :key="card" :class="{ 'flipped': card.isFlipped, 'matched' : card.isMatched }" @click="flipCard(card)" :value="card.value" :img="card.img"></Card>
       <div v-if="finish" style="text-align: center; width:100px">
         Bravo !
       </div>

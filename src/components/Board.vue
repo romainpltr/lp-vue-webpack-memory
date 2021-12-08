@@ -1,6 +1,6 @@
 <template>
   <div class="board">
-      <Card v-for="card in board" v-model="nCard" :key="card" v-on:selectedCard="selectedCard" :class="{ 'flipped': card.isFlipped, 'matched' : card.isMatched }" @click="flipCard(card)" :value="card.value" :img="card.img"></Card>
+      <Card v-for="card in board" v-model="nCard" :key="card" v-on:selectedCard="selectedCard(isFlipped)" :class="{ 'flipped': card.isFlipped, 'matched' : card.isMatched }" @click="flipCard(card)" :value="card.value" :img="card.img"></Card>
       <div v-if="finish" style="text-align: center; width:100px">
         Bravo !
       </div>
@@ -88,26 +88,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.board {
-    display: grid;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    align-content: center;
-    justify-content: space-around;
-    margin-left: 50%;
-    margin-right: 50%;
 
-}
-.card {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.matched{
-   opacity: 0.3;
-}
 </style>
